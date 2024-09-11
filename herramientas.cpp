@@ -3,60 +3,54 @@
 #include <stdlib.h>
 #include <time.h>
 #include <unistd.h>
-
 #include "herramientas.h"
-#include "martillo.h"
-#include "destornillador.h"
-#include "taladro.h"
+
 using namespace std;
 
+//////detallo la clase de herramientas///////////
+
+herramientas::herramientas(float peso_1,float longitud_1)
+{
+
+    _peso=peso_1;
+    _longitud=longitud_1;
+    _nombre="";
+
+    ///cout<<"peso:"<<peso_1<<" "<<"longitud:"<<longitud_1<<endl;
+}
+
+void herramientas::set_peso(float peso_1)
+{
+
+    if(peso_1>0)
+    {
+
+        _peso=peso_1;
+    }
+
+}
+
+void herramientas::set_longitud(float longitud_1)
+{
+
+    if(longitud_1>0)
+    {
+
+        _longitud=longitud_1;
 
 
+    }
+}
+float herramientas::get_peso()
+{
 
+    return _peso;
 
+}
 
+float  herramientas::get_longitud()
+{
 
+    return _longitud;
+}
 
-
-
-
-
-int main() {
-
-////////cuando heredo en el main siempre los .H de los dos///////////
- string nombre;
- string cabeza;
- string tipo_destornillador;
- float peso,longitud,potencia;
-
- /////////////
- cout<<"nombre , peso, longitud:"<<endl;
- cin>>nombre;
- cin>>peso;
-  cin>>longitud;
-  cout<<"tipo de cabeza"<<endl;
-  cin>>cabeza;
-  cout<<" tipo de puta destornillador:"<<endl;
-  cin>>tipo_destornillador;
-  cout<<"potencia:"<<endl;
-  cin>>potencia;
-///////////////////////
-     destornillador  objeto_2(tipo_destornillador,peso,longitud);
-     taladro        objeto_3(nombre,potencia,peso,longitud);
-
-
-   martillo    objeto(cabeza,peso,longitud);
-
-   herramientas objeto_1(nombre,peso,longitud);
-
-
-   cout<<"herramienta:"<<objeto_1.get_nombre()<<endl;
-   cout<<"peso:"<<objeto_1.get_peso()<<endl;
-   cout<<"longitud:"<<objeto_1.get_longitud()<<"centimetros"<<endl;
-   cout<<objeto.get_tipo_martillo()<<endl;
-   cout<<"tipo de cabeza:"<<objeto.get_tipo_cabeza()<<endl;
-   cout<<objeto_2.get_tipo_destornillador()<<endl;
-   cout<<"tipo de punta del destornillador:"<<objeto_2.get_tipo_punta()<<endl;
-
-
-    return 0;}
