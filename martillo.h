@@ -20,22 +20,21 @@ using namespace std;
 
 
 
-class martillo: public herramientas{
+class martillo: public herramientas
+{
 
-   private:
-        string _tipo_cabeza;
-        string  _martillo;
+private:
+    string _tipo_cabeza;
 
-   public:
+public:
     /////////cosntructor///////////
 
-    martillo(string nombre_1,float peso,float longitud);
+    martillo(string tipo_cabeza,float peso,float longitud);
 
     string get_tipo_cabeza();
 
-    string get_tipo_martillo();
 
-     ///void set_tipo_cabeza(string tipo_cabeza_1);
+    string set_mostar_informacion();
 
 
 
@@ -43,3 +42,4 @@ class martillo: public herramientas{
 
 
 };
+;
